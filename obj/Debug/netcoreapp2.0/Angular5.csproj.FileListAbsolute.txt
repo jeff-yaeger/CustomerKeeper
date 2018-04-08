@@ -1,0 +1,12 @@
+C:\Angular5\bin\Debug\netcoreapp2.0\Angular5.deps.json
+C:\Angular5\bin\Debug\netcoreapp2.0\Angular5.runtimeconfig.json
+C:\Angular5\bin\Debug\netcoreapp2.0\Angular5.runtimeconfig.dev.json
+C:\Angular5\bin\Debug\netcoreapp2.0\Angular5.dll
+C:\Angular5\bin\Debug\netcoreapp2.0\Angular5.pdb
+C:\Angular5\obj\Debug\netcoreapp2.0\Angular5.csprojResolveAssemblyReference.cache
+C:\Angular5\obj\Debug\netcoreapp2.0\Angular5.csproj.CoreCompileInputs.cache
+C:\Angular5\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Angular5\obj\Debug\netcoreapp2.0\Angular5.AssemblyInfoInputs.cache
+C:\Angular5\obj\Debug\netcoreapp2.0\Angular5.AssemblyInfo.cs
+C:\Angular5\obj\Debug\netcoreapp2.0\Angular5.dll
+C:\Angular5\obj\Debug\netcoreapp2.0\Angular5.pdb

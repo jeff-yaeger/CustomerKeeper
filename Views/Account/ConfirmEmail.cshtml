@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Confirm email";
+}
+
+<h2>Done!</h2>
+<div>
+    <p>
+        Thank you for confirming your email.
+    </p>
+</div>
+<form asp-action="GoToLogin" asp-controller="Account" method="get" class="form-horizontal">
+    <p>
+        <button type="submit" class="btn btn-secondary" name="gotoLoing">Go to Login</button>
+    </p>
+</form>

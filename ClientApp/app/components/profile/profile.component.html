@@ -1,0 +1,238 @@
+<div class="ibox-title">
+    <h5>Company Profile</h5>
+</div>
+<div  *ngIf="!coffee">
+    <div *ngIf="!isEdit">
+        <div *ngIf="!isUpt">
+            <div class="ibox-content no-padding border-left-right">
+            </div>
+            <div class="ibox-content profile-content">
+                <h3><strong>Your Company Name</strong></h3>
+                <h4><strong>Your Name</strong></h4>
+                <h5>
+                    My Info
+                </h5>
+                <p>
+                    Your Address
+                </p>
+                <p>
+                    Your Phone Number
+                </p>
+                <p>
+                    Your Email Address
+                </p>
+                <div class="user-button">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button type="button" (click)="editProf()" class="btn btn-white btn-sm btn-block"><i class="fa fa-envelope"></i> Add Company Info Here!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="isUpt">
+            <div class="ibox-content no-padding border-left-right">
+            </div>
+            <div class="ibox-content profile-content">
+                <h3><strong>{{ model.compName }}</strong></h3>
+                <h4><strong>{{ model.fName }} {{ model.lName }}</strong></h4>
+                <h5>
+                    My Info
+                </h5>
+                <p>
+                    Address: {{ model.street }}
+                </p>
+                <p>
+                    {{ model.city }}, {{ model.state }} {{ model.zip }}
+                </p>
+                <p>
+                    Phone Number: {{ model.phone }}
+                </p>
+                <p>
+                    Email Address: {{ model.email }}
+                </p>
+                <div class="user-button">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button type="button" (click)="editProf()" class="btn  btn-white btn-sm btn-block"><i class="fa fa-envelope"></i> Edit Profile </button>
+                        </div>
+                        <div class="col-md-6">
+                            <button  (click)="onCoffee()" type="button" class="btn  btn-white btn-sm btn-block"><i class="fa fa-coffee"></i> Buy a coffee</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ibox-content" *ngIf="isEdit">
+        <form #profForm="ngForm">
+            <div class="form-group"><label class="col-sm-3 control-label">Company Name</label>
+                <div class="col-sm-9">
+                    <input id="compName" class="form-control"
+                        required name="compName"
+                        [(ngModel)]="model.compName" #compName="ngModel" >
+                    <div *ngIf="compName.invalid && (compName.dirty || compName.touched)"
+                        class="alert alert-danger">
+                        <div *ngIf="compName.errors.required">
+                            Company Name is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group"><label class="col-sm-3 control-label">Your First Name</label>
+                <div class="col-sm-9">
+                    <input id="fName" class="form-control"
+                        required name="fName"
+                        [(ngModel)]="model.fName" #fName="ngModel" >
+                    <div *ngIf="fName.invalid && (fName.dirty || fName.touched)"
+                        class="alert alert-danger">
+                        <div *ngIf="fName.errors.required">
+                            First Name is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div class="form-group"><label class="col-sm-3 control-label">Your Last Name</label>
+                <div class="col-sm-9">
+                    <input id="lName" class="form-control"
+                        required name="lName"
+                        [(ngModel)]="model.lName" #lName="ngModel" >
+                    <div *ngIf="lName.invalid && (lName.dirty || lName.touched)"
+                        class="alert alert-danger">
+                        <div *ngIf="lName.errors.required">
+                            Last Name is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div class="form-group"><label class="col-sm-3 control-label">Street</label>
+                <div class="col-sm-9">
+                    <input id="street" class="form-control"
+                        required name="street"
+                        [(ngModel)]="model.street" #street="ngModel" >
+                    <div *ngIf="street.invalid && (street.dirty || street.touched)"
+                        class="alert alert-danger">
+                        <div *ngIf="street.errors.required">
+                            Street address is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div class="form-group"><label class="col-sm-3 control-label">City</label>
+                <div class="col-sm-9">
+                    <input id="city" class="form-control"
+                        required name="city"
+                        [(ngModel)]="model.city" #city="ngModel" >
+                    <div *ngIf="city.invalid && (city.dirty || city.touched)"
+                        class="alert alert-danger">
+                        <div *ngIf="city.errors.required">
+                            City is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div class="form-group"><label class="col-sm-3 control-label">State</label>
+                <div class="col-sm-9">
+                    <input id="state" class="form-control"
+                        required name="state" minlength="2" maxlength="2"
+                        [(ngModel)]="model.state" #state="ngModel" >
+                    <div *ngIf="state.invalid && (state.dirty || state.touched)"
+                        class="alert alert-danger">
+                        <div *ngIf="state.errors.required">
+                            State is required.
+                        </div>
+                        <div *ngIf="state.errors.minlength">
+                            The state must be 2 letters.
+                        </div>
+                        <div *ngIf="state.errors.maxlength">
+                            The state must be 2 letters.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div class="form-group"><label class="col-sm-3 control-label">Zip</label>
+                <div class="col-sm-9">
+                    <input id="zip" class="form-control"
+                        required  name="zip" maxlength="5"
+                        [(ngModel)]="model.zip" #zip="ngModel" 
+                        pattern="^\d{5}(?:[-\s]\d{4})?$">
+                    <div *ngIf="zip.invalid && (zip.dirty ||zip.touched)"
+                        class="alert alert-danger">
+                        <div *ngIf="zip.errors.required">
+                            The zip code is required.
+                        </div>
+                        <div *ngIf="zip.errors.pattern">
+                            The zip code must be 5 NUMBERS.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div class="form-group"><label class="col-sm-3 control-label">Email</label>
+                <div class="col-sm-9">
+                    <input id="email" class="form-control"
+                        required email name="email" type="email"
+                        [(ngModel)]="model.email" #email="ngModel" >
+                    <div *ngIf="email.invalid && (email.dirty || email.touched)"
+                        class="alert alert-danger">
+                        <div *ngIf="email.errors.required">
+                            Email is required.
+                        </div>
+                        <div *ngIf="email.errors.email">
+                            A valid email address is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div class="form-group"><label class="col-sm-3 control-label">Phone Number</label>
+                <div class="col-sm-9">
+                    <input id="phone" class="form-control" 
+                        required name="phone" pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$"
+                        [(ngModel)]="model.phone" #phone="ngModel" >
+                    <div *ngIf="phone.invalid && (phone.dirty || phone.touched)"
+                        class="alert alert-danger">
+                        <div *ngIf="phone.errors.required">
+                            A phone number is required.
+                        </div>
+                        <div *ngIf="phone.errors.pattern">
+                            You must enter a valid phone number(000-000-0000).
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div class="form-group">
+                <div class="col-sm-4 col-sm-offset-2"  *ngIf="!isUpt">
+                    <button [disabled]="profForm.invalid" (click)="onSubmit()" class="btn btn-white" >Submit</button>
+                    <button (click)="editProf()" class="btn btn-white" >Back</button>
+                </div>
+                <div class="col-sm-4 col-sm-offset-2" *ngIf="isUpt">
+                    <button [disabled]="profForm.invalid" (click)="onEdit()" class="btn btn-white" >Update</button>
+                    <button (click)="onDelete()" class="btn btn-white" >Delete</button>
+                    <button (click)="editProf()" class="btn btn-white" >Back</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row" *ngIf="coffee">
+    <div class="col-lg-12">
+        <div class="wrapper wrapper-content">
+            <div class="middle-box text-center animated fadeIn">
+                <h3 class="font-bold">Great Job!</h3>
+                <div class="error-desc">
+                    You bought a coffee!
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-sm btn-white" (click)="onCoffee()">Vow to spend your money better</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

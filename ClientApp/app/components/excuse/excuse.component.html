@@ -1,0 +1,50 @@
+<div class="ibox-title">
+    <h1>Excuse</h1>
+    <div ibox-tools></div>
+</div>
+<div class="ibox-content" *ngIf="!isDone">
+    <form class="form-horizontal"  #excuseForm="ngForm">
+        <p>We know your busy, let us help you get out of your commitments</p>
+        <button (click)="onExcuse()" class="btn btn-sm btn-white" >Generate Excuse</button>
+        <div class="form-group"><label class="col-lg-2 control-label">Excuse</label>
+            <div class="col-lg-10"><input required class="form-control"
+                    id="excuse" name="excuse" minlength="10"
+                    [(ngModel)]="model.excuse" #excuse="ngModel" >
+                <div *ngIf="excuse.invalid && (excuse.dirty || excuse.touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="excuse.errors.required">
+                        A good excuse is required.
+                    </div>
+                    <div *ngIf="excuse.errors.minlength">
+                       Seriously?.. they aren't going to believe you if your excuse is less than 10 characters
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group"><label class="col-lg-2 control-label">Picture</label>
+            <div class="col-lg-10">
+                <img class="img-responsive" src='{{ model.image }}' alt="the link pic here" >
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10">
+                <button  [disabled]="excuseForm.invalid" (click)="onSend()" class="btn btn-sm btn-white" type="submit">Send Excuse</button>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="row" *ngIf="isDone">
+    <div class="col-lg-12">
+        <div class="wrapper wrapper-content">
+            <div class="middle-box text-center animated fadeIn">
+                <h3 class="font-bold">Great Job!</h3>
+                <div class="error-desc">
+                    You're off the hook!
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-sm btn-white" [routerLink]="['/home']">Don't Click</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

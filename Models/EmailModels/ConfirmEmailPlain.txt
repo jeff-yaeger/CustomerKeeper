@@ -1,0 +1,5 @@
+﻿Welcome to App!
+                              
+Please confirm your email
+                                   
+To confirm go to this link: {{ConfirmUrl}}

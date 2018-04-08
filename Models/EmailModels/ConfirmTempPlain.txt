@@ -1,0 +1,18 @@
+﻿Hello {firName}!
+                              
+Please confirm your information
+                                   
+Appointment Date and Time: {appoint}
+Name: {firName} {lasName}
+Street: {street}
+City, State Zip: {city}, {state} {zip}
+Email: {email}
+Phone: {phone}
+
+Please confirm all the information below is correct by clicking the button or link.              
+
+To confirm go to this link: {{ConfirmUrl}}
+
+Something isn't right?
+
+Click here: {{EditUrl}}

@@ -1,0 +1,105 @@
+﻿@model CustomerEditModel
+@{
+    ViewData["Title"] = "CustomerEdit";
+}
+
+<h2>Edit Your Information</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-route-returnUrl="@ViewData["ReturnUrl"]" asp-controller="Account" asp-action="CustomerEdit" method="post">
+            <hr />
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="hidden">
+                <label asp-for="Id"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="hidden">
+                <label asp-for="UserId"></label>
+                <input asp-for="UserId" class="form-control" />
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustFName"></label>
+                <input asp-for="CustFName" class="form-control" />
+                <span asp-validation-for="CustFName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustLName"></label>
+                <input asp-for="CustLName" class="form-control" />
+                <span asp-validation-for="CustLName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Street"></label>
+                <input asp-for="Street" class="form-control" />
+                <span asp-validation-for="Street" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="City"></label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="State"></label>
+                <input asp-for="State" class="form-control" />
+                <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Zip"></label>
+                <input asp-for="Zip" class="form-control" />
+                <span asp-validation-for="Zip" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone"></label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AppointDate"></label>
+                <input asp-for="AppointDate" type="date" class="form-control" />
+                <span asp-validation-for="AppointDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AppointTime"></label>
+                <input asp-for="AppointTime" type="time" class="form-control" />
+                <span asp-validation-for="AppointTime" class="text-danger"></span>
+            </div>
+            <div class="hidden">
+                <label asp-for="ModifiedBy"></label>
+                <input asp-for="ModifiedBy" class="form-control" />
+                <span asp-validation-for="ModifiedBy" class="text-danger"></span>
+            </div>
+            <div class="hidden">
+                <label asp-for="IsCnfrmed"></label>
+                <input asp-for="IsCnfrmed" class="form-control" />
+                <span asp-validation-for="IsCnfrmed" class="text-danger"></span>
+            </div>
+            <div class="hidden">
+                <label asp-for="ReminderSent"></label>
+                <input asp-for="ReminderSent" class="form-control" />
+                <span asp-validation-for="ReminderSent" class="text-danger"></span>
+            </div>
+            <div class="hidden">
+                <label asp-for="CompName"></label>
+                <input asp-for="CompName" class="form-control" />
+                <span asp-validation-for="CompName" class="text-danger"></span>
+            </div>
+            <div class="hidden">
+                <label asp-for="CompEmail"></label>
+                <input asp-for="CompEmail" class="form-control" />
+                <span asp-validation-for="CompEmail" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-default">Update</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

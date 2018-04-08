@@ -1,0 +1,4 @@
+﻿                       
+Please click the link below to reset your password.
+                                   
+To confirm go to this link: {{ConfirmUrl}}

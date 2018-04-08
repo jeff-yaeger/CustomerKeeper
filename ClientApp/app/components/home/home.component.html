@@ -1,0 +1,60 @@
+<div class="ibox-title">
+    <h1></h1>
+    <div ibox-tools></div>
+</div>
+<div class="ibox-content">
+    <div class="row">
+        <!-- <div class="col-sm-5 m-b-xs"><select class="input-sm form-control input-s-sm inline">
+            <option value="0">Option 1</option>
+            <option value="1">Option 2</option>
+            <option value="2">Option 3</option>
+            <option value="3">Option 4</option>
+        </select>
+        </div>
+        <div class="col-sm-4 m-b-xs">
+            <div data-toggle="buttons" class="btn-group">
+                <label class="btn btn-sm btn-white"> <input type="radio" id="option1" name="options"> Day </label>
+                <label class="btn btn-sm btn-white active"> <input type="radio" id="option2" name="options"> Week </label>
+                <label class="btn btn-sm btn-white"> <input type="radio" id="option3" name="options"> Month </label>
+            </div>
+        </div> -->
+        <div class="col-sm-9 m-b-xs">
+            <div class="btn-group">
+                <button class="btn btn-sm btn-white" [routerLink]="['/custform']">   Create New Appointment </button>
+                <button class="btn btn-sm btn-white" (click)="upcomAppoint()">Upcoming Appointments</button>
+                <button class="btn btn-sm btn-white" (click)="pastAppoint()">Past Appointments</button>
+            </div>
+        </div>
+       
+        <div class="col-sm-3">
+            <div class="input-group"><input type="text" placeholder="Search" class="input-sm form-control"> <span class="input-group-btn">
+                            <button type="button" class="btn btn-sm btn-primary"> Go!</button> </span></div>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <!-- <th></th> -->
+                    <th>Appointment</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let dates of appoint" (click)="edit(dates)" >
+                    <!-- <td><input icheck type="checkbox" ng-model="main.checkOne"></td> -->
+                    <td>{{ dates.custFName }} {{ dates.custLName }}
+                        <small>{{ dates.street }}</small>
+                    </td>
+                    <td>{{ dates.phone }}</td>
+                    <td>{{ dates.email }}</td>
+                    <td>{{ dates.appoint | date: 'shortDate' }}</td>
+                    <td>{{ dates.appoint | date: 'shortTime' }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

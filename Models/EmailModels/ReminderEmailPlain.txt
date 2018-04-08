@@ -1,0 +1,5 @@
+﻿Just a friendly reminder:
+                              
+You have an upcoming meeting with {CompName} at {Appoint}
+                                   
+See you soon!
